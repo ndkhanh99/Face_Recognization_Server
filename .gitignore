@@ -1,3 +1,10 @@
 env/
 *.DS_Store
 *.pyc
+data/
+static/images/
+images/
+backend/models/20180402-114759.pb
+backend/models/model-20180402-114759.ckpt-275.data-00000-of-00001
+backend/models/model-20180402-114759.ckpt-275.index
+backend/models/model-20180402-114759.meta
