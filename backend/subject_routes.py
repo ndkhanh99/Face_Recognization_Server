@@ -142,6 +142,7 @@ def add_url(current_user):
     # return make_response(jsonify('no permission'), 403)
 
 
+
 @subject_routes.route('/subject-to-student', methods=['POST'])
 @token_required
 def subjects_to_student(current_user):
@@ -171,15 +172,3 @@ def get_time():
     timenow = today.strftime('%H:%M:%S')
     return jsonify(year1, month1, day1, hour1, minutes, second)
 
-
-@subject_routes.route('/test-upload', methods=['POST'])
-@token_required
-def test_upload(current_user):
-    photo = request.form.get('testImage')
-    image_path = os.path.join('/Users/macbook/Desktop/attendanceServer/backend/static/images', 'newimage.png')
-    starter = photo.find(',')
-    image_data = photo[starter + 1:]
-    image_data = bytes(image_data, encoding='ascii')
-    im = Image.open(BytesIO(base64.b64decode(image_data)))
-    im.save(image_path)
-    return jsonify({'msg': 'success'})

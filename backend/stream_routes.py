@@ -96,9 +96,3 @@ def captureImages(key):
             print('save sample: ', sample_num)
             time.sleep(0.1)
             status = False
-
-    status = False
-    camera.release()
-    cv2.destroyAllWindows()
-    app.app_context().push()
-    return jsonify('success')
